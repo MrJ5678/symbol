@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let symbol = Symbol('设置一个唯一id')
+    // let hd = {
+    //   name: "Jld",
+    //   [symbol]: "love"
+    // }
+
+    // for (const key in hd) {
+    //   console.log(key)
+    // }
+    // for (const key of Object.keys(hd)) {
+    //   console.log(key)
+    // }
+    // console.log(Object.getOwnPropertySymbols(hd))
+    // for (const key of Object.getOwnPropertySymbols(hd)) {
+    //   console.log(key)
+    // }
+    // console.log(Reflect.ownKeys(hd))
+    // for (const key of Reflect.ownKeys(hd)) {
+    //   console.log(key)
+    // }
+
+    let site = Symbol('一个唯一id')
+
+    class User {
+      constructor(name) {
+        this.name = name
+        this[site] = 'love'
+      }
+
+      getName() {
+        return `${this[site]} ${this.name}`
+      }
+    }
+
+    let hd = new User('Jld')
+    console.log(hd.getName())
+  </script>
+</body>
+</html>

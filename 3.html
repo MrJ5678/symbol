@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Cache {
+      static data = {}
+
+      static get(name) {
+        return this.data[name]
+      }
+
+      static set(name, value) {
+        return this.data[name] = value
+      }
+    }
+    // Cache.set('hdcms', 'Jld')
+    // console.log(Cache.get('hdcms'))
+    let user = { name: "Jld", desc: "user", key: Symbol('会员资料') }
+    let cart = { name: "Jld", desc: "cart", key: Symbol('购物车') }
+    Cache.set(user.key, user)
+    Cache.set(cart.key, cart)
+    console.log(Cache.get(user.key))
+  </script>
+</body>
+</html>

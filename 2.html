@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let user1 = {
+      name: "Jld",
+      key: Symbol.for('user1')
+    }
+    let user2 = {
+      name: "Jld",
+      key: Symbol.for('user2')
+    }
+    let grade = {
+      [user1.key]: { "js": 100, "css": 99 },
+      [user2.key]: { "js": 33, "css": 44 },
+    }
+
+    // console.log(Symbol.keyFor(user1['key']))
+    console.log(grade[user2.key])
+  </script>
+</body>
+</html>
